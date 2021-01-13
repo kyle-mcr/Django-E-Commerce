@@ -152,4 +152,3 @@ EMAIL_USE_TLS = True #as the port is using TLS
 EMAIL_HOST_USER = '3361a87a1d6284e98ac6c0502dcccebc' #using mailjet sandbox as it is free after we create an free acount
 EMAIL_HOST_PASSWORD = '0f2880d5557d707c082f8a078398aa2e' 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
