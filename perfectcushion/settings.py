@@ -149,5 +149,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4' #using crispy form as it applies the right b
 EMAIL_HOST = 'in-v3.mailjet.com' #smpt is Simple Mail Transfer Protocol
 EMAIL_PORT = '587' #this is a secured port that uses TLS(Transport Layer Security) Encryption
 EMAIL_USE_TLS = True #as the port is using TLS
-EMAIL_HOST_USER = 'ed5cf85181093f7ff571031df6094c4b' #using mailjet sandbox as it is free after we create an free acount
-EMAIL_HOST_PASSWORD = 'c10585673c51b1765a4db5b7e324791f' 
+EMAIL_HOST_USER = '3361a87a1d6284e98ac6c0502dcccebc' #using mailjet sandbox as it is free after we create an free acount
+EMAIL_HOST_PASSWORD = '0f2880d5557d707c082f8a078398aa2e' 

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block metadescription %}
 	This is the Order Details page. Here is your order in detail.
@@ -20,7 +21,7 @@
 					<td class="text-left" colspan="2">
 						<b>Order: </b>#{{ order.id }}<br>
 						<b>Date: </b>{{ order.created|date:"d M Y" }}<br>
-						<b>Order Total: </b>${{ order.total }}<br>
+						<b>Order Total: </b>${{ order.total|intcomma  }}<br>
 						<b>Order Status: </b><i class="fas fa-check"></i> Complete
 					</td>
 					<td class="text-left" colspan="2">
@@ -42,17 +43,17 @@
 					<tr>
 						<td>{{ item.product }}</td>
 						<td>{{ item.quantity }}</td>
-						<td>${{ item.price }}</td>
-						<td>${{ item.sub_total }}</td>
+						<td>${{ item.price|intcomma  }}</td>
+						<td>${{ item.sub_total|intcomma  }}</td>
 					</tr>
 				{% endfor %}
 				<tr>
 					<td class="text-right" colspan="3"><b>Total</b></td>
-					<td>${{ order.total }}</td>
+					<td>${{ order.total|intcomma  }}</td>
 				</tr>
 				<tr>
 					<td class="text-right" colspan="3"><b>Total Paid</b></td>
-					<td>${{ order.total }}</td>
+					<td>${{ order.total|intcomma  }}</td>
 				</tr>
 				<tr>
 					<td class="text-left" colspan="2">

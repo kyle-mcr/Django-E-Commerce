@@ -155,7 +155,7 @@ def sendEmail(order_id):
 		'''Sending the order'''
 		subject = "Ultimate Cards - Order #{}".format(transaction.id) #using the transaction method to interpolate the transaction id in the curly brackets of the subject
 		to = ['{}'.format(transaction.emailAddress)]
-		from_email = "troykato5@gmail.com"
+		from_email = "kylemcreynolds92@gmail.com"
 		order_information = {
 		'transaction' : transaction,
 		'order_items' :	order_items

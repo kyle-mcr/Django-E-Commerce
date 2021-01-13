@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 
 {% block metadescription %}
@@ -46,7 +47,7 @@
 						<a href="{{ product.get_url }}"> <img class="card-img-top my_image" src="{{product.image.url}}" style="width:90%; margin-top:2%;"alt="{{product.name}}" > </a> <!-- So that when we click on any product image in a specific category we can go to the products details --> <!-- in img tag the classes are used to store images inside the cards -->
 						<div class="card-body">
 							<h4>{{ product.name }}</h4>
-							<p>${{product.price}} </p>
+							<p>${{product.price|intcomma }} </p>
 						</div>
 					</div>
 				</div>

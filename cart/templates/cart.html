@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block metadescription %}
 	This is the shopping cart page. Proceed to review your items and place the order.
@@ -60,12 +61,12 @@
 								<br>
 								SKU: {{ cart_item.product.id }}
 								<br>
-								Unit Price: ${{ cart_item.product.price }}
+								Unit Price: ${{ cart_item.product.price|intcomma }}
 								<br>
-								Qty: {{ cart_item.quantity }} x ${{ cart_item.product.price }}
+								Qty: {{ cart_item.quantity }} x ${{ cart_item.product.price|intcomma }}
 							</td>
 							<td>
-								${{ cart_item.sub_total }}
+								${{ cart_item.sub_total|intcomma }}
 							</td>
 							{% if cart_item.quantity < cart_item.product.stock %} <!-- if product still in stock after adding then + icon keep on showing -->
 								<td>
@@ -103,7 +104,7 @@
 						</tr>
 						<tr>
 							<td class="text-left">
-								Your total is: <strong>${{ total }}</strong>
+								Your total is: <strong>${{ total|intcomma }}</strong>
 							</td>
 						</tr>
 					</tbody>
