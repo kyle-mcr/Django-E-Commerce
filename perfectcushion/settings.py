@@ -25,7 +25,7 @@ SECRET_KEY = '80buif6-69k5yj2(4jx=*ug)$_n-2$$5n5t6-9ac$!f759#*wo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.ultimatecards5.com', 'ultimatecards5.com', 'webapp-1020656.pythonanywhere.com']
 
 
 # Application definition

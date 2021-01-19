@@ -155,13 +155,14 @@ def sendEmail(order_id):
 		'''Sending the order'''
 		subject = "Ultimate Cards - Order #{}".format(transaction.id) #using the transaction method to interpolate the transaction id in the curly brackets of the subject
 		to = ['{}'.format(transaction.emailAddress)]
-		from_email = "kylemcreynolds92@gmail.com"
+		from_email = "ultimatecards5.order@gmail.com"
+		bcc =['troykato5@gmail.com']
 		order_information = {
 		'transaction' : transaction,
 		'order_items' :	order_items
 		}
 		message = get_template('email/email.html').render(order_information)
-		msg = EmailMessage(subject, message, to=to, from_email=from_email)
+		msg = EmailMessage(subject, message, to=to, from_email=from_email, bcc=bcc)
 		msg.content_subtype = 'html'
 		msg.send()
 		print("message sent")
