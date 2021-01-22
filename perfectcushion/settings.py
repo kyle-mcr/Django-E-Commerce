@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,13 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '80buif6-69k5yj2(4jx=*ug)$_n-2$$5n5t6-9ac$!f759#*wo'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['www.ultimatecards5.com', 'ultimatecards5.com', 'webapp-1020656.pythonanywhere.com']
-
 
 # Application definition
 
@@ -138,8 +139,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #declaring static root which
 
 #Stripe Settings for Payment
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51HsNdDCbg3OY8zCJqgjjQmeCBlJEzeW1mnnIyFnaG7YZvTQhgeOHNPsbggnWkFu5NOVdHOof9aeARoWImIzhzWIg00JqZo39NA'
-STRIPE_SECRET_KEY = 'sk_test_51HsNdDCbg3OY8zCJ7hTTlndJ4DoZFD2IgllVI2C9nuCBRyUjd6iMftzVwMFFiW1RUT7wukkz1OD89M5T3jJaWEyp00wp41LtZT' #these are stripe api keys used for production for launch we would have to get the life key as mentioned in the stripe documentations you get them after making an account
+STRIPE_PUBLISHABLE_KEY = str(os.getenv('STRIPE_PUBLISHABLE_KEY'))
+STRIPE_SECRET_KEY = str(os.getenv('STRIPE_SECRET_KEY'))
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #using crispy form as it applies the right bootstrap classes to the forms 
 
@@ -148,6 +150,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4' #using crispy form as it applies the right b
 EMAIL_HOST = 'in-v3.mailjet.com' #smpt is Simple Mail Transfer Protocol
 EMAIL_PORT = '587' #this is a secured port that uses TLS(Transport Layer Security) Encryption
 EMAIL_USE_TLS = True #as the port is using TLS
-EMAIL_HOST_USER = '3361a87a1d6284e98ac6c0502dcccebc' #using mailjet sandbox as it is free after we create an free acount
-EMAIL_HOST_PASSWORD = '0f2880d5557d707c082f8a078398aa2e' 
+EMAIL_HOST_USER = str(os.getenv('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 
