@@ -13,7 +13,7 @@
 {% block content %}
 	<div class="row my_prod_row_class">
 		<div class="mx-auto">
-			<p><a href="{% url 'shop:allProdCat' %}">Home</a> | <a href="{{ product.category.get_url }}">{{ product.category }}</a> | {{product.name}} </p>
+			<p style="padding: 0px 15px 0px 15px;"><a href="{% url 'shop:allProdCat' %}">Home</a> | <a href="{{ product.category.get_url }}">{{ product.category }}</a> | {{product.name}} </p>
 		</div>
 		<div class="container">
 			<br>
@@ -26,9 +26,9 @@
 				<div class="col-12 col-sm-12 col-md-12 col-lg-6">
 					<div>
 						<h1 class="my_prod_title">{{product.name}}</h1>
-						<p>${{product.price|intcomma}}</p>
+						<p style="font-weight: bold;">${{product.price|intcomma}}</p>
 						<p class="my_title"> Product Description </p>
-						<p class="text-justify my_prod_text">{{product.description}}</p>
+						<p class="text-justify my_prod_text"><i class="fas fa-quote-left"></i> {{product.description}} <i class="fas fa-quote-right"></i></p>
 						{% if product.stock <= 0 %}
 							<p class="text-justify my_prod_text"><b>Out of Stock</b></p>
 						{% else %}

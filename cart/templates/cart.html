@@ -77,7 +77,7 @@
 								<td>
 									&nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fas fa-minus-circle custom_icon"></i></a>&nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_a"><i class="fas fa-trash-alt custom_icon"></i></a>
 								</td>
-								<td></td>
+								
 							{% endif %}
 						</tr>
 					{% endfor %}
