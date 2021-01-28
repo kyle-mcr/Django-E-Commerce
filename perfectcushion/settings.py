@@ -29,6 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['www.ultimatecards5.com', 'ultimatecards5.com', 'webapp-1020656.pythonanywhere.com']
 
+
 # Application definition
 
 INSTALLED_APPS = [
