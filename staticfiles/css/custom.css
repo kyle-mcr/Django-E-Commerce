@@ -119,7 +119,6 @@ body {
 .my_prod_title {
 	font-size: 16px;
 	text-transform: uppercase;
-	letter-spacing: .2em;
 	padding-top: 15px;
 	padding-bottom: 10px;
 }
@@ -159,7 +158,7 @@ body {
 	color: #868e96 !important;
 }
 
-.my_custom_button {
+. {
 	margin-top: 5px;
 }
 
@@ -200,5 +199,11 @@ body {
 @media only screen and (max-width: 600px) {
 	.uclogo{
 		min-width:90%;
+	}
+	#product_info{
+		padding: 20px;
+	}
+	#prodcut_info2{
+		width: 70%;
 	}
 	}

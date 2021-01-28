@@ -11,6 +11,20 @@
 {% endblock %}
 
 {% block content %}
+<style>
+@media only screen and (max-width: 600px) {
+	.uclogo{
+		min-width:90%;
+	}
+	#product_info{
+		padding: 5px 50px 50px 50px;
+		width:150px;
+	}
+	#prodcut_info2{
+		padding: 5px 50px 50px 50px;
+	}
+	}	
+</style>
 	<div class="row my_prod_row_class">
 		<div class="mx-auto">
 			<p style="padding: 0px 15px 0px 15px;"><a href="{% url 'shop:allProdCat' %}">Home</a> | <a href="{{ product.category.get_url }}">{{ product.category }}</a> | {{product.name}} </p>
@@ -20,19 +34,21 @@
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center"> <!-- the col classes are bootstrap classes for grid layout and making product page more interactive i.e when we change the chrome page size --> 
 					<div style="min-width: 18rem">
-						<img src="{{product.image.url}}" style="max-width:70%;" alt="{{ product.name }}" >
+						<img src="{{product.image.url}}" style="max-width:80%;" alt="{{ product.name }}" >
 					</div>
 				</div>
-				<div class="col-12 col-sm-12 col-md-12 col-lg-6">
-					<div>
+				<div id="product_info" class="col-12 col-sm-12 col-md-12 col-lg-6">
+					<div id="product_info2">
 						<h1 class="my_prod_title">{{product.name}}</h1>
-						<p style="font-weight: bold;">${{product.price|intcomma}}</p>
-						<p class="my_title"> Product Description </p>
+						<hr style="width:100%;text-align:left;margin-left:0">
+						<p class="my_title" style="text-decoration: underline; font-weight: bold;"> Product Description </p>
 						<p class="text-justify my_prod_text"><i class="fas fa-quote-left"></i> {{product.description}} <i class="fas fa-quote-right"></i></p>
 						{% if product.stock <= 0 %}
 							<p class="text-justify my_prod_text"><b>Out of Stock</b></p>
 						{% else %}
-							<a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
+						<p style="font-weight: bold;"><i class="fas fa-check" style="margin-right:2px;"></i>In Stock: <span style="color:green;">${{product.price|intcomma}}</span> (Shipping Included)</p>
+						<hr style="width:100%;text-align:left;margin-left:0">
+							<a class="btn btn-success" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a>
 						{% endif %}
 					</div>
 				</div>
