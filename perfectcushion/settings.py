@@ -132,11 +132,12 @@ STATIC_URL = '/static/'
 
 ''' Since we have two image fields in our models declaration so we need to put some configurations in the settings file in order to make sure the images are uploaded to the right location '''
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #declaring static root which is where our static files will be stored
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
     )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #declaring static root which is where our static files will be stored
-
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
 
 #Stripe Settings for Payment
 
