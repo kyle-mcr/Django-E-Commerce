@@ -196,3 +196,9 @@ body {
 .my_custom_div {
 	margin-bottom: 20px !important;
 } 
+
+@media only screen and (max-width: 600px) {
+	.uclogo{
+		min-width:90%;
+	}
+	}

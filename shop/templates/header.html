@@ -1,6 +1,13 @@
 {% load static %}
+<style>
+	@media only screen and (max-width: 600px) {
+	.uclogo{
+		min-width:90%;
+	}
+	}
+</style>
 <header>
 	<center>
-		<a href="{% url 'shop:allProdCat' %}"><img src="{% static 'img/logo.png' %}" style="width:50%;" alt="Ultimate Cards"></a> <!-- Note logo image should be available at the specified static/img/logo.png directory otherwise Ultimate Cards will appear in space of logo -->
+		<a href="{% url 'shop:allProdCat' %}"><img class="uclogo" src="{% static 'img/logo.png' %}" style="width:60%;" alt="Ultimate Cards"></a> <!-- Note logo image should be available at the specified static/img/logo.png directory otherwise Ultimate Cards will appear in space of logo -->
 	</center>
 </header>
